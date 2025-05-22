@@ -22,7 +22,7 @@ public class Main {
         );
         System.out.println("Summe ECTS aller Studierenden: " + students(students));
         // Task II: Set of ECTS of all IFM students
-
+        System.out.println("ECTS IFM-Studierende (als Set): " + ifmCps(students));
         // Task III: Random
 
         // Task IV+V: Resources
