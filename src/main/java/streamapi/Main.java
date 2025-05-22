@@ -69,9 +69,13 @@ public class Main {
      *
      * @return List of ten random integers (between 0 and 10)
      */
+    // Commit: Aufgabe III gelöst: 10 Zufallszahlen zwischen 0 und 9 mit Stream API generiert
+    // Änderung: Random-Stream erzeugt, mit boxed() in Integer-Liste umgewandelt
     public static List<Integer> random() {
-        // TODO
-        throw new UnsupportedOperationException();
+        return new Random()
+            .ints(10, 0, 10)
+            .boxed()
+            .collect(Collectors.toList());
     }
 
     /**
