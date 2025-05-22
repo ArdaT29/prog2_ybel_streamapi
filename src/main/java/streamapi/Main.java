@@ -37,9 +37,12 @@ public class Main {
      * @param studentList List of students
      * @return Sum of credit points of all students
      */
+    // Commit: Aufgabe I gelöst: Summe der ECTS mit Stream API berechnet
+    // Änderung: Imperative Schleife durch Stream ersetzt, Summe über mapToInt und sum()
     public static Integer students(List<Student> studentList) {
-        // TODO
-        throw new UnsupportedOperationException();
+        return studentList.stream()
+            .mapToInt(Student::cps)
+            .sum();
     }
 
     /**
