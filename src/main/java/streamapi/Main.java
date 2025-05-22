@@ -13,7 +13,14 @@ public class Main {
     public static void main(String... args) {
 
         // Task I: Students
-
+        List<Student> students = List.of(
+            new Student("A", 30, Enrollment.IFM),
+            new Student("B", 45, Enrollment.IFM),
+            new Student("C", 60, Enrollment.ELT),
+            new Student("D", 45, Enrollment.ARCH),
+            new Student("E", 80, Enrollment.IFM)
+        );
+        System.out.println("Summe ECTS aller Studierenden: " + students(students));
         // Task II: Set of ECTS of all IFM students
 
         // Task III: Random
