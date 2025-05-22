@@ -103,8 +103,18 @@ public class Main {
      * @param path Name of the file to be accessed within the resource folder
      * @return String of all matching lines, separated by {@code "\n"}
      */
+    // Commit: Aufgabe V gelöst: Zeilen aus Ressourcendatei mit Stream API gefiltert und zusammengefügt
+    // Änderung: Zeilen mit BufferedReader eingelesen, nach Länge ≥ 2 und Start mit 'a' gefiltert, mit \n verbunden
     public static String resources(String path) {
-        // TODO
-        throw new UnsupportedOperationException();
+        try (BufferedReader reader = new BufferedReader(
+            new InputStreamReader(getResourceAsStream(path)))) {
+
+            return reader.lines()
+                .filter(line -> line.length() >= 2 && line.startsWith("a"))
+                .collect(Collectors.joining("\n"));
+
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }
     }
 }
