@@ -24,7 +24,7 @@ public class Main {
         // Task II: Set of ECTS of all IFM students
         System.out.println("ECTS IFM-Studierende (als Set): " + ifmCps(students));
         // Task III: Random
-
+        System.out.println("10 Zufallszahlen (0–9): " + random());
         // Task IV+V: Resources
 
     }
