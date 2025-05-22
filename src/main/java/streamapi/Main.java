@@ -87,9 +87,10 @@ public class Main {
      * @param path Name of the file to be accessed within the resource folder.
      * @return An open {@link InputStream} for the resource file
      */
+    // Commit: Aufgabe IV gelöst: Ressourcendatei als InputStream geöffnet
+    // Änderung: Zugriff auf Ressourcen mit getClassLoader().getResourceAsStream
     private static InputStream getResourceAsStream(String path) {
-        // TODO
-        throw new UnsupportedOperationException();
+        return Main.class.getClassLoader().getResourceAsStream(path);
     }
 
     /**
