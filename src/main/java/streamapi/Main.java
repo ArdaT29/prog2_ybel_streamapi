@@ -53,9 +53,13 @@ public class Main {
      * @param studentList List of students
      * @return Set of credit points of all IFM students
      */
+    // Commit: Aufgabe II gelöst: ECTS-Werte von IFM-Studierenden als Set gesammelt
+    // Änderung: Stream mit Filter für IFM, Methodenreferenz und toSet()
     public static Set<Integer> ifmCps(List<Student> studentList) {
-        // TODO
-        throw new UnsupportedOperationException();
+        return studentList.stream()
+            .filter(s -> s.enrollment() == Enrollment.IFM)
+            .map(Student::cps)
+            .collect(Collectors.toSet());
     }
 
     /**
